@@ -20,7 +20,7 @@ public class Main {
             System.out.println("EXCEPCIÓ!!");
             fullExp.printStackTrace();
         }
-        // Hola
+
         System.out.println("Inicialitzem la cua, afegim 3 elements i els desencolem!!!");
 
         try {
