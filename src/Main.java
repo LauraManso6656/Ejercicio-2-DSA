@@ -1,5 +1,5 @@
 public class Main {
-
+// adios
     public static void main(String[] args) {
         Queue<Integer> q = new QueueImpl<Integer>(5);
         try {
