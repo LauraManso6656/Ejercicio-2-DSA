@@ -6,6 +6,7 @@ public class QueueImpl<E> implements Queue<E>{
     private int p;
 
     public QueueImpl(int len) {
+
         this.data = (E[])new Object[len];
     }
 
@@ -19,8 +20,19 @@ public class QueueImpl<E> implements Queue<E>{
 
 
     public E pop() throws EmptyQueueException {
-        // TO-DO
-        return null;
+        if (p == 0) {
+            throw new EmptyQueueException();
+        }
+
+        E firstElement = data[0];
+
+        // Desplazar los elementos a la izquierda
+        for (int i = 1; i < p; i++) {
+            data[i - 1] = data[i];
+        }
+        data[--p] = null; // Limpiar la referencia al último elemento
+
+        return firstElement;
     }
 
     private boolean isFull() {
